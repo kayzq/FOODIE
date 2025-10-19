@@ -24,8 +24,8 @@
 		{
 			$('input[type="submit"]').click(function()
 			{
-				var m = $("#MatricNo").val();
-				var ic = $("#studIcNo").val();
+				var m = $("#username").val();
+				var ic = $("#password").val();
 				
 				// Checking for blank fields.
 				if(m =='' && ic =='')
@@ -37,14 +37,14 @@
 				}
 				else if(m =='')
 				{
-					$('#MatricNo').css("background-color","#ffb3b3");
+					$('#username').css("background-color","#ffb3b3");
 					alert("Please fill Username fields!");
 					return false;
 				}
 				else if(ic =='')
 				{
-					$('#studIcNo').css("background-color","#ffb3b3");
-					alert("Please fill IC Number fields!");
+					$('#password').css("background-color","#ffb3b3");
+					alert("Please Password fields!");
 					return false;
 				}
 				else
@@ -54,12 +54,12 @@
 				
 			});
 			
-			$('#MatricNo').focus(function(){
-				$('#MatricNo').css("background-color","#99ccff");
+			$('#username').focus(function(){
+				$('#username').css("background-color","#99ccff");
 			});
 			
-			$('#studIcNo').focus(function(){
-				$('#studIcNo').css("background-color","#99ccff");
+			$('#password').focus(function(){
+				$('#password').css("background-color","#99ccff");
 			});
 			
 			$('input[type="text"]').focusout(function(){
@@ -80,7 +80,7 @@
 			<nav class="nav-links">
 				<a href="#">ABOUT US</a>
 				<a href="admin.html">ADMIN LOGIN</a>
-				<a href="login.html">STUDENT LOGIN</a>
+				<a href="/FOODIE-main/student/login.php">STUDENT LOGIN</a>
 			</nav>
 		</div>
     </div>
@@ -92,25 +92,19 @@
 		<div class="login-card">
 			<h2 class="card-title">ADMIN LOGIN</h2>
 			
-			<form id="login" name="login" method="post" action="admin.html">
-				<label for="MatricNo">Username</label>
-				<input type="text" name="MatricNo" id="MatricNo" placeholder="Enter here" maxlength="10" />
+			<form id="login" name="login" method="post" action="plogin.php">
+				<label for="username">Username</label>
+				<input type="text" name="username" id="username" placeholder="Enter here" maxlength="10" />
 
-				<label for="studIcNo">IC Number</label>
+				<label for="studIcNo">Password</label>
 				<!-- Note: Changed placeholder to "Enter here" to match the image -->
-				<input type="password" name="studIcNo" id="studIcNo" placeholder="Enter here" maxlength="12" />
+				<input type="password" name="password" id="password" placeholder="Enter here" maxlength="255" />
 
 				<input type="submit" class="btn" name="btnlogin" value="LOGIN"/>
 			</form>
 		</div>
 		
-		<!-- Custom message box to replace alert() -->
-		<div id="message-box" class="message-box-container hidden">
-			<div class="message-box-content">
-				<p id="message-text"></p>
-				<button id="message-close">OK</button>
-			</div>
-		</div>
+	
 		
 		<!-- Removed the original logo, h1, hr, and admin link below the form as they do not appear in the card in the image.
 			The admin link is now in the top navigation bar. -->
