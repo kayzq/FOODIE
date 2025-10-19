@@ -53,7 +53,7 @@ $row = mysqli_num_rows($qry);
 			echo
 			"<script language='javascript'>
 				alert('Student does not exist.');
-				window.location='index.php';
+				window.location='admin.html';
 			</script>";
 		}
 
