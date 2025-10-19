@@ -6,7 +6,7 @@
 
         /* Base Styles: Deep red background, primary font set to Poppins */
         body {
-            background: #4F000B; /* Deep maroon/red background */
+            background: #720026; /* Deep maroon/red background */
             font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
             min-height: 100vh;
             display: flex;
@@ -60,7 +60,7 @@
             text-decoration: none;
             font-size: 14px;
             margin-left: 35px;
-            font-weight: 0; 
+            font-weight: 0; /* Made links slightly bolder */
             transition: opacity 0.2s;
             text-transform: uppercase;
         }
@@ -104,7 +104,19 @@
             margin-top: 15px;
         }
 
-        input[type=text], input[type=password] {
+        input[type=text]{
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #1f2937;
+            background-color: white;
+            transition: border-color 0.2s;
+
+        } 
+        
+        input[type=password] {
             width: 100%;
             padding: 10px 12px;
             font-size: 16px;
@@ -120,10 +132,15 @@
             border-color: #8C253B; /* Accent color on focus */
         }
 
+        /* The original jQuery relies on changing background color for focus/error, which we keep */
+        #MatricNo:focus, #studIcNo:focus {
+            /* The jQuery overrides this, but we keep the visual cue */
+            background-color: white !important;
+        }
 
         /* Button: Dark Maroon, centered */
         .btn {
-            background-color: #4F000B; /* Button color from the image */
+            background-color: #720026; /* Button color from the image */
             border-radius: 20px;
             border: none;
             color: white;
@@ -136,20 +153,7 @@
             margin-right: auto;
         }
         .btn:hover {
-            background-color: #6D1729; /* Darker red on hover */
+            background-color: #84002c; /* Darker red on hover */
         }
 
-       .register {
-        font-size: 10px;
-        margin-top: 20px;
-        text-decoration: none;
-        color: #1f2937;
-        transition: 0.2s;
-       }
-       .register:hover{
-        opacity: 0.7;
-       }
-
-
-        
-
+      
