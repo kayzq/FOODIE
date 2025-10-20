@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Admin Login</title>
+		<title>Register page</title>
 
 		<!-- Google Font -->
 		<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,61 +16,37 @@
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		
-		
-		
 		<script>
-		//jQuery for validate blank input
-		$(document).ready(function()
-		{
-			$('input[type="submit"]').click(function()
-			{
-				var m = $("#username").val();
-				var ic = $("#password").val();
-				
-				// Checking for blank fields.
-				if(m =='' && ic =='')
-				{
-					$('input[type="text"]').css("background-color","#ffb3b3");
-					$('input[type="password"]').css("background-color","#ffb3b3");
-					alert("Please fill all fields!");
-					return false;
+			document.addEventListener("DOMContentLoaded", function() {
+			const form = document.getElementById("registerForm");
+
+			form.addEventListener("submit", function(event) {
+				// Get all input and select fields
+				const inputs = form.querySelectorAll("input[required], select[required]");
+				let valid = true;
+
+				// Reset all field borders before checking
+				inputs.forEach(field => {
+				field.style.border = "1px solid #ccc";
+				});
+
+				// Check each field
+				inputs.forEach(field => {
+				if (field.value.trim() === "" || field.value === "Choose") {
+					valid = false;
+					field.style.border = "2px solid red";
 				}
-				else if(m =='')
-				{
-					$('#username').css("background-color","#ffb3b3");
-					alert("Please fill Username fields!");
-					return false;
+				});
+
+				// If any field is invalid, stop submission
+				if (!valid) {
+				alert(" Please fill in all required fields before submitting.");
+				event.preventDefault(); // Prevent form from submitting
 				}
-				else if(ic =='')
-				{
-					$('#password').css("background-color","#ffb3b3");
-					alert("Please Password fields!");
-					return false;
-				}
-				else
-				{
-					return true;
-				}
-				
 			});
-			
-			$('#username').focus(function(){
-				$('#username').css("background-color","#99ccff");
 			});
-			
-			$('#password').focus(function(){
-				$('#password').css("background-color","#99ccff");
-			});
-			
-			$('input[type="text"]').focusout(function(){
-				$('input[type="text"]').css("background-color", "white");
-			});
-			
-			$('input[type="password"]').focusout(function(){
-				$('input[type="password"]').css("background-color", "white");
-			});
-		});
-		</script>
+			</script>
+
 		
 	</head>
 <!-- Top Navigation Bar -->
@@ -78,9 +54,9 @@
         <div class="header-bar">
 			<div class="logo">FOODIE.</div>
 			<nav class="nav-links">
-				<a href="#">ABOUT US</a>
-				<a href="admin.html">ADMIN LOGIN</a>
-				<a href="/FOODIE-main/student/login.php">STUDENT LOGIN</a>
+				<a href="/FOODIE/landing-page/index.html">ABOUT US</a>
+				<a href="/FOODIE/admin/admin.html">ADMIN LOGIN</a>
+				<a href="/FOODIE/student/login.html">STUDENT LOGIN</a>
 			</nav>
 		</div>
     </div>
@@ -90,19 +66,63 @@
 
 		<!-- Login Card (Centered) -->
 		<div class="login-card">
-			<h2 class="card-title">STUDENT REGISTER</h2>
-			
-			<form id="login" name="login" method="post" action="plogin.php">
-				<label for="username">Email</label>
-				<input type="text" name="username" id="username" placeholder="Enter here" maxlength="10" />
+        <h2 class="card-title">STUDENT REGISTER</h2>
+        
+        <form id="registerForm" name="registerForm" method="post" action="register.php">
+            
+            <!-- Row 1: Email (Full Width) -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Enter here" required/>
+            </div>
 
-				<label for="studIcNo">Password</label>
-				<!-- Note: Changed placeholder to "Enter here" to match the image -->
-				<input type="password" name="password" id="password" placeholder="Enter here" maxlength="255" />
+            <!-- Row 2: Name (Full Width) -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter here" required/>
+            </div>
+            
+            <!-- Row 3: IC Number / Matric ID (Two Columns) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="icNo">IC Number</label>
+                    <input type="text" name="icNo" id="icNo" placeholder="Enter here" maxlength="12" required/>
+                </div>
+                <div class="form-group">
+                    <label for="matricId">Matric ID</label>
+                    <input type="text" name="matricId" id="matricId" placeholder="Enter here" maxlength="10" required/>
+                </div>
+            </div>
+            
+            <!-- Row 4: Phone No / Gender (Two Columns) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phoneNo">Phone No</label>
+                    <input type="text" name="phoneNo" id="phoneNo" placeholder="Enter here" required/>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="gender" required>
+                        <option value="Choose" >Choose</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+            </div>
 
-				<input type="submit" class="btn" name="btnlogin" value="REGISTER"/>
-			</form>
-		</div>
+			 <div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password" placeholder="Enter password" required/>
+			</div>
+
+			<div class="form-group">
+				<label for="confirmPassword">Confirm Password</label>
+				<input type="password" name="confirmPassword" id="confirmPassword" placeholder="Re-enter password" required/>
+			</div>
+            
+            <input type="submit" class="btn" name="btnRegister" value="REGISTER"/>
+        </form>
+    </div>
 	
 	</body>
 		

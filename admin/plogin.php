@@ -43,7 +43,7 @@ $row = mysqli_num_rows($qry);
 			$_SESSION['logoutPermission'] = 1; //when stud select prod and that prod have in cart, this will prevent them to log out to the system [0=No 1=Yes]
 			$_SESSION['order4Receipt'] = ""; //after checkout, orderID will be new but the orderID that has been ordered before will be save in this $_SESSION
 			
-			header("Location:");
+			header("Location: adminDashboard.html");
 		
 			}
 			
@@ -52,8 +52,8 @@ $row = mysqli_num_rows($qry);
 		{
 			echo
 			"<script language='javascript'>
-				alert('Student does not exist.');
-				window.location='index.php';
+				alert('admin does not exist.');
+				window.location='admin.html';
 			</script>";
 		}
 

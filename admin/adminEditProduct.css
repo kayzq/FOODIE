@@ -67,10 +67,6 @@ aside {
   gap: 25px;
 }
 
-.nav-menu a:hover {
-  color: var(--primary-color);
-}
-
 .nav-item {
   text-decoration: none;
   color: var(--text-dark);
@@ -81,8 +77,12 @@ aside {
   margin-bottom: 50px;
 }
 
-.nav-item.active {
+.nav-items.active {
   color: var(--text-light);
+}
+
+.nav-items:hover {
+  color: var(--primary-color);
 }
 
 /* Main content area */
@@ -106,44 +106,21 @@ aside {
 }
 
 /* Card styles */
-.info-section{
+.profile-card-container,
+.info-section,
+.statistic-section {
   background-color: white;
   padding: 30px;
-  padding-bottom: 100px;
+  width: 80%;
   margin-bottom: 30px;
-  border-radius: var(--rounded-radius);
   box-shadow: 4px 4px 2px rgba(0, 0, 0, 25%);
 }
 
-/* Section Styling*/
-.section-title {
-  font-size: 24px;
+p {
+  font-size: 18px;
   color: #CE4257;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  border-bottom: #CE4257 solid 3px;
+  margin-top: 20px;
   font-weight: bold;
-}
-
-.info-item {
-  display: flex;
-  flex-direction: row;
-}
-
-.hidden-select {
-  margin-left: 50px;
-  font-size: 14px;
-  padding: 5px;
-  width: 500px;
-}
-
-.info-label {
-  font-size: 14px;
-  font-weight: Light;
-  color: black;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  margin-top: 10px;
 }
 
 @media (max-width: 1024px) {
