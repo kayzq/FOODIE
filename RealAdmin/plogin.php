@@ -1,6 +1,6 @@
 <?php
 
-include("adminconnection.php");
+include("connection.php");
 
 if (!$conn) {
     die("Database connection failed: " . mysqli_connect_error());
@@ -11,7 +11,7 @@ $username = mysqli_real_escape_string($conn,$_POST['username']);
 $password = mysqli_real_escape_string($conn,$_POST['password']);
 
 
-$sql = "SELECT * FROM staff s 
+$sql = "SELECT * FROM admins a 
 		where username = '$username'
 		and password = '$password'";
 
@@ -32,10 +32,10 @@ $row = mysqli_num_rows($qry);
 			$_SESSION['userlogged'] = 1;
 			$_SESSION['username'] = $username;
 			$_SESSION['password'] = $password;
-			$_SESSION['staffName'] = $r['staffName'];
-            $_SESSION['staffID'] = $r['staffID'];
-            $_SESSION['staffEmail'] = $r['staffEmail'];
-            $_SESSION['staffPhoneNo'] = $r['staffPhoneNo'];
+			$_SESSION['adminName'] = $r['adminName'];
+            $_SESSION['adminID'] = $r['adminID'];
+            $_SESSION['adminEmail'] = $r['adminEmail'];
+            $_SESSION['adminPhoneNo'] = $r['adminPhoneNo'];
 			
 			
 			//use when stud order product
@@ -43,7 +43,8 @@ $row = mysqli_num_rows($qry);
 			$_SESSION['logoutPermission'] = 1; //when stud select prod and that prod have in cart, this will prevent them to log out to the system [0=No 1=Yes]
 			$_SESSION['order4Receipt'] = ""; //after checkout, orderID will be new but the orderID that has been ordered before will be save in this $_SESSION
 			
-			header("Location: adminDashboard.html");
+			//header("Location: "); 
+            echo "login success";
 		
 			}
 			
@@ -53,7 +54,7 @@ $row = mysqli_num_rows($qry);
 			echo
 			"<script language='javascript'>
 				alert('staff does not exist.');
-				window.location='Staff.html';
+				window.location='realAdminLogin.html';
 			</script>";
 		}
 

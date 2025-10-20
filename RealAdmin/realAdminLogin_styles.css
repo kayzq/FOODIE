@@ -132,7 +132,7 @@ input[type="password"]:focus {
   margin-right: auto;
 }
 .btn:hover {
-  background-color: #6d1729; /* Darker red on hover */
+  background-color: #414141; /* Darker red on hover */
 }
 
 .register {
