@@ -1,11 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .header {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 7px;
+  width: 93.2%;
   height: 68px;
   background: white;
-  color: #1f2937;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,13 +18,13 @@
 
 
 .logo {
-font-size: 175%;
-font-weight: 700;
-color: #1f2937;
-letter-spacing: 4.8px;
-box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: 4.8px;
+  box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3);
 }
-
 
 .navbar a {
 color: #1f2937;
@@ -31,17 +34,25 @@ margin-left: 35px;
 }
 
 .navbar a:hover {
-opacity: 0.7; /* Adjusted opacity for better contrast on white */
+opacity: 0.7;
 }
 
+/* ---------- GLOBAL ---------- */
 body {
   background-color: #fff;
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   color: #333;
+  margin-top: 90px; /* ensures header doesn’t cover content */
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 .landing {
-  margin-top: 80px;
+  margin-top: 88px;
   height: 50vh;
   width: 100%;
   background: linear-gradient(to right, #720026, #d80048);
@@ -79,7 +90,7 @@ body {
 .promo-section {
   margin-top: 15px;
   position: relative;
-  height: 500px;
+  height: 700px;
   background-color: #4a001f; /* solid background (right side) */
   overflow: hidden;
 }
@@ -105,7 +116,9 @@ body {
 }
 
 .left-side h2 {
-  font-size: 1.8rem;
+  padding-left : 200px;
+  padding-top : 120px;
+  font-size: 2.0rem;
   line-height: 1.6;
   font-weight: 600;
 }
@@ -117,7 +130,7 @@ body {
 }
 
 .right-side h3 {
-  font-size: 1.3rem;
+  font-size: 2.0rem;
   font-weight: 600;
   line-height: 1.5;
   text-align: center;
@@ -138,4 +151,3 @@ body {
 .right-side a:hover {
   background-color: #ffb3b3;
 }
-
