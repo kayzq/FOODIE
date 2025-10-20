@@ -29,33 +29,32 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
     <script>
-      //jQuery for validate blank input
-      $(document).ready(function () {
+    $(document).ready(function () {
         $('input[type="submit"]').click(function () {
-          var m = $("#MatricNo").val();
-          var p = $("#password").val();
+          var m = $("#username").val();
+          var ic = $("#password").val();
 
           // Checking for blank fields.
-          if (m == "" && p == "") {
+          if (m == "" && ic == "") {
             $('input[type="text"]').css("background-color", "#ffb3b3");
             $('input[type="password"]').css("background-color", "#ffb3b3");
             alert("Please fill all fields!");
             return false;
           } else if (m == "") {
-            $("#MatricNo").css("background-color", "#ffb3b3");
-            alert("Please fill Matric Number fields!");
+            $("#username").css("background-color", "#ffb3b3");
+            alert("Please fill Username fields!");
             return false;
-          } else if (p == "") {
+          } else if (ic == "") {
             $("#password").css("background-color", "#ffb3b3");
-            alert("Please fill Password fields!");
+            alert("Please Password fields!");
             return false;
           } else {
             return true;
           }
         });
 
-        $("#MatricNo").focus(function () {
-          $("#MatricNo").css("background-color", "#99ccff");
+        $("#username").focus(function () {
+          $("#username").css("background-color", "#99ccff");
         });
 
         $("#password").focus(function () {
