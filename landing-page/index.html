@@ -1,49 +1,63 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- language of the webpage, in this case en means english-->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <!-- language of the webpage, in this case en means english-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSC264 GROUP PROJECT TESTING</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="header">
-        <div class="logo">FOODIE.</div>
+      <div class="logo">FOODIE.</div>
 
-        <nav class="navbar">
-				<a href="/FOODIE/landing-page/index.html">ABOUT US</a>
-				<a href="/FOODIE/RealAdmin/realAdminLogin.html">ADMIN LOGIN</a>
-				<a href="/FOODIE/staff/Staff.html">STAFF LOGIN</a>
-				<a href="/FOODIE/student/login.html">STUDENT LOGIN</a>
-        </nav>
+      <nav class="navbar">
+        <a href="/FOODIE/landing-page/index.html">ABOUT US</a>
+        <a href="/FOODIE/RealAdmin/realAdminLogin.html">ADMIN LOGIN</a>
+        <a href="/FOODIE/staff/Staff.html">STAFF LOGIN</a>
+        <a href="/FOODIE/student/login.html">STUDENT LOGIN</a>
+      </nav>
     </header>
 
     <section class="landing" id="landing">
-        <div class="landing-page">
-            <h1>Hungry, No time, No transport? <br> FOODIE will bring it to you.</h1>
-            <button id="explore-games-btn">REGISTER NOW</button>
-        </div>
+      <div class="landing-page">
+        <h1>
+          Hungry, No time, No transport? <br />
+          FOODIE will bring it to you.
+        </h1>
+        <button id="explore-games-btn">REGISTER NOW</button>
+      </div>
     </section>
 
-    <section class ="promo-section" id ="promo-section">
-        <span class="left-side">
-            <h2>
-                Craving something delicious?<br>Foodie brings your favorite<br>campus meals straight to<br>your door - fast, fresh, and<br>hassle-free.
-            </h2>
-        </span>
+    <section class="promo-section" id="promo-section">
+      <span class="left-side">
+        <h2>
+          Craving something delicious?<br />Foodie brings your favorite<br />campus
+          meals straight to<br />your door - fast, fresh, and<br />hassle-free.
+        </h2>
+      </span>
 
-        <div class="right-side">
-            <h3>DON'T WASTE YOUR<br>TIME START NOW<br>WITH FOODIE</h3>
-            <a href="/FOODIE/student/login.html">START SHOPPING</a>
-        </div>
+      <div class="right-side">
+        <h3>DON'T WASTE YOUR<br />TIME START NOW<br />WITH FOODIE</h3>
+        <a href="/FOODIE/student/login.html">START SHOPPING</a>
+      </div>
     </section>
-</body>
+    <!--
+    <section class="about-us">
+        <div class="about-bg">
+            <h3 class="about-us-title">ABOUT US</h3>
+        </div>
+        <div class="logo-about">FOODIE.</div>
+    </section>
+    -->
+  </body>
 </html>
-        <script>
-        
-            document.getElementById("explore-games-btn").onclick = function() {
-            window.location.href = "/FOODIE/student/register.html"; 
-            };
-        </script>
- 
+<script>
+  document.getElementById("explore-games-btn").onclick = function () {
+    window.location.href = "/FOODIE/student/register.html";
+  };
+</script>
