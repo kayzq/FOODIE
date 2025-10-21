@@ -8,10 +8,6 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
     header("Location: login.php");
 }
 
-
-			
-				$sql_staff = "SELECT * FROM staff ORDER BY staffName ASC";
-        $qry_staff = mysqli_query($conn, $sql_staff);
 ?>
 
 <!DOCTYPE html>
@@ -40,5 +36,9 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
       <!-- MAIN CONTENT -->
       <main class="main-content">
         <header class="header-title">LIST OF STAFF</header>
+        </header>
+      </main>
+    </div>
+  </body>
 </html>
 
