@@ -43,120 +43,121 @@ body {
   color: #333;
   margin-top: 90px;
 
-.about-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
+  .about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
 
-.landing {
-  margin-top: 88px;
-  height: 50vh;
-  width: 100%;
-  background: linear-gradient(to right, #720026, #d80048);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  color: #fff;
-}
+  .landing {
+    margin-top: 88px;
+    height: 50vh;
+    width: 100%;
+    background: linear-gradient(to right, #720026, #d80048);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+  }
 
-.landing-page h1 {
-  font-size: 2.3rem;
-  line-height: 1.5;
-  margin-bottom: 25px;
-}
+  .landing-page h1 {
+    font-size: 2.3rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
 
-#explore-games-btn {
-  padding: 12px 30px;
-  border: none;
-  border-radius: 25px;
-  background-color: #fff;
-  color: #d80048;
-  font-weight: 600;
-  font-size: 16px;
-  box-shadow: 3px 4px 0 #a00c2b;
-  cursor: pointer;
-  transition: 0.3s;
-}
+  #explore-games-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #d80048;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 3px 4px 0 #a00c2b;
+    cursor: pointer;
+    transition: 0.3s;
+  }
 
-#explore-games-btn:hover {
-  background-color: #ffe3eb;
-}
+  #explore-games-btn:hover {
+    background-color: #ffe3eb;
+  }
 
-.promo-section {
-  margin-top: 15px;
-  position: relative;
-  height: 700px;
-  background-color: #4a001f;
-  overflow: hidden;
+  .promo-section {
+    margin-top: 15px;
+    position: relative;
+    height: 700px;
+    background-color: #4a001f;
+    overflow: hidden;
 
-  justify-content: center;
-  grid-template-rows: repeat(2, 1fr);
-}
+    justify-content: center;
+    grid-template-rows: repeat(2, 1fr);
+  }
 
-.promo-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70%;
-  height: 100%;
-  background: linear-gradient(rgba(128, 0, 64, 0.6), rgba(128, 0, 64, 0.6)),
-    url("promo_bg.png") no-repeat center/cover;
-  clip-path: polygon(0 0, 90% 0, 60% 100%, 0% 100%);
-  z-index: 1;
-}
+  .promo-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(rgba(128, 0, 64, 0.6), rgba(128, 0, 64, 0.6)),
+      url("promo_bg.png") no-repeat center/cover;
+    clip-path: polygon(0 0, 90% 0, 60% 100%, 0% 100%);
+    z-index: 1;
+  }
 
-.left-side,
-.right-side {
-  display: inline-block;
-  padding-top: 250px;
-  position: relative;
-  z-index: 2;
-  color: white;
-}
+  .left-side,
+  .right-side {
+    display: inline-block;
+    padding-top: 250px;
+    position: relative;
+    z-index: 2;
+    color: white;
+  }
 
-.left-side {
-  width: 55%;
-  text-align: center;
-  padding-left: 50px;
-  padding-top: 100px;
-}
+  .left-side {
+    width: 55%;
+    text-align: center;
+    padding-left: 50px;
+    padding-top: 100px;
+  }
 
-.left-side h2 {
-  font-size: 2.3rem;
-  line-height: 1.6;
-  font-weight: 600;
-  display: inline;
-  text-align: center;
-}
+  .left-side h2 {
+    font-size: 2.3rem;
+    line-height: 1.6;
+    font-weight: 600;
+    display: inline;
+    text-align: center;
+  }
 
-.right-side {
-  width: 35%;
-  text-align: center;
-}
+  .right-side {
+    width: 35%;
+    text-align: center;
+  }
 
-.right-side h3 {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.5;
-  text-align: center;
-}
+  .right-side h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+  }
 
-.right-side a {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: #fff;
-  color: #4f000b;
-  border-radius: 25px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 3px 4px 0 #2b0006;
-  transition: 0.3s;
-}
+  .right-side a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #4f000b;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 3px 4px 0 #2b0006;
+    transition: 0.3s;
+  }
 
-.right-side a:hover {
-  background-color: #ffb3b3;
+  .right-side a:hover {
+    background-color: #ffb3b3;
+  }
 }
