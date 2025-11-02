@@ -45,7 +45,7 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
           <a href="search.php" class="nav-item">SEARCH</a>
           <a href="#" class="nav-item">RECEIPTS</a>
           <a href="#" class="nav-item">CART, DORM &amp; DATES</a>
-          <a href="adminContact.php" class="nav-item">STAFF CONTACT</a>  
+          <a href="adminContact.php" class="nav-item">ADMIN CONTACT</a>  
           <a href="logout.php" class="nav-item">LOG OUT</a>  
         </nav>
       </aside>
