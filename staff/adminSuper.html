@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="adminOrders.css" />
+    <link rel="stylesheet" href="adminSuper.css" />
   </head>
 
   <body>
@@ -24,26 +24,27 @@
 
       <!--MAIN CONTENT-->
       <main class="main-content">
-        <header class="header-title">ORDERS</header>
+        <header class="header-title">SUPER ADMIN</header>
 
         <!-- personal information section-->
         <section class="info-section">
-          <h3 class="section-title">List of Order(s) in FOODIE.</h3>
-          <div class="info-item">
-            <span class="info-label">sort order by</span>
-            <select class="hidden-select">
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
-            </select>
+          <h3 class="section-title">PLEASE ENTER YOUR SUPER ADMIN LOGIN</h3>
 
-            <a class="btn" href="/FOODIE/staff/adminOrders2.html"
-              ><img
-                src="/FOODIE/images/check.png"
-                alt="Select"
-                width="18"
-                height="18"
-            /></a>
+          <div class="login-container">
+            <form class="login-form">
+              <label for="password">PASSWORD</label>
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="password-input"
+              />
+
+              <a class="btn" href="/FOODIE/staff/adminSuperChoose.html"
+                >LOGIN</a
+              >
+            </form>
           </div>
         </section>
       </main>

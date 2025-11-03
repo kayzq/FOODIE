@@ -13,7 +13,7 @@
   padding: 0;
   font-family: Arial, sans-serif; /* Use a common sans-serif font */
 }
-  
+
 a {
   text-decoration: none;
   text-align: center;
@@ -96,7 +96,7 @@ aside {
 
 /* Header/title bar */
 .header-title {
-  background-color: #CE4257;
+  background-color: #ce4257;
   color: white;
   font-size: 48px;
   font-weight: bold;
@@ -120,7 +120,7 @@ aside {
   color: var(--primary-color);
   padding-bottom: 10px;
   margin-bottom: 20px;
-  border-bottom: #CE4257 solid 3px;
+  border-bottom: #ce4257 solid 3px;
   font-weight: bold;
 }
 
@@ -140,15 +140,22 @@ aside {
 
 .info-label {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: regular;
   color: var(--text-light);
   text-transform: uppercase;
   margin-bottom: 5px;
   display: block;
-  color: black;
+  color: #929191;
 }
 
 .info-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  display: block;
+}
+.info-value-stat {
   font-size: 40px;
   font-weight: bold;
   color: var(--text-dark);
@@ -157,19 +164,19 @@ aside {
 }
 
 .info-section p {
-    font-size: 18px;
-    padding-top : 35px;
-    text-align: center;
-    color : #CE4257;
-    font-weight: bold;
+  font-size: 18px;
+  padding-top: 35px;
+  text-align: center;
+  color: #ce4257;
+  font-weight: bold;
 }
 
 .info-section h3 {
-  color : #CE4257;
+  color: #ce4257;
 }
 
 .info-section h2 {
-  color : black;
+  color: black;
   text-align: center;
 }
 
@@ -241,5 +248,4 @@ aside {
     border-bottom: none;
     padding-bottom: 0;
   }
-
 }

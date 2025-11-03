@@ -13,7 +13,7 @@
   padding: 0;
   font-family: Arial, sans-serif; /* Use a common sans-serif font */
 }
-  
+
 a {
   text-decoration: none;
   text-align: center;
@@ -67,6 +67,10 @@ aside {
   gap: 25px;
 }
 
+.nav-menu a:hover {
+  color: var(--primary-color);
+}
+
 .nav-item {
   text-decoration: none;
   color: var(--text-dark);
@@ -77,12 +81,8 @@ aside {
   margin-bottom: 50px;
 }
 
-.nav-items.active {
+.nav-item.active {
   color: var(--text-light);
-}
-
-.nav-items:hover {
-  color: var(--primary-color);
 }
 
 /* Main content area */
@@ -96,7 +96,7 @@ aside {
 
 /* Header/title bar */
 .header-title {
-  background-color: #CE4257;
+  background-color: #ce4257;
   color: white;
   font-size: 48px;
   font-weight: bold;
@@ -106,21 +106,132 @@ aside {
 }
 
 /* Card styles */
-.profile-card-container,
-.info-section,
-.statistic-section {
+.info-section {
   background-color: white;
   padding: 30px;
-  width: 80%;
   margin-bottom: 30px;
+  border-radius: var(--rounded-radius);
   box-shadow: 4px 4px 2px rgba(0, 0, 0, 25%);
 }
 
-p {
-  font-size: 18px;
-  color: #CE4257;
-  margin-top: 20px;
+/* Section Styling*/
+.section-title {
+  font-size: 24px;
+  color: var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: #ce4257 solid 3px;
   font-weight: bold;
+}
+
+.btn {
+  display: inline-flex; /* lets text + image align nicely */
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* space between text and image */
+  background-color: #5ab071;
+  border-radius: 30px;
+  width: 150px;
+  padding: 8px 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: regular;
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+  margin-bottom: 30px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4a9a62;
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.types-description-class {
+  width: 200px; /* make this wider — adjust to your preference */
+  padding: 6px 10px; /* add inner spacing */
+  border-radius: 8px; /* rounded corners */
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.types-description-class {
+  width: 100px;
+}
+
+.types-description {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  display: inline;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 40px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-color);
+}
+
+.info-label {
+  font-size: 14px;
+  font-weight: regular;
+  color: var(--text-light);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  display: block;
+  color: #929191;
+}
+
+.info-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  display: block;
+}
+.info-value-stat {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  display: block;
+}
+
+.info-section p {
+  font-size: 18px;
+  padding-top: 35px;
+  text-align: center;
+  color: #ce4257;
+  font-weight: bold;
+}
+
+.info-section h3 {
+  color: #ce4257;
+}
+
+.info-section h2 {
+  color: black;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {

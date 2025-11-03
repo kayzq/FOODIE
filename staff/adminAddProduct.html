@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="adminAddProduct.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo-container">
+          <div class="logo">FOODIE.</div>
+        </div>
+        <nav class="nav-menu">
+          <a href="/FOODIE/staff/adminDashboard.html" class="nav-item active"
+            >DASHBOARD</a
+          >
+          <a href="/FOODIE/staff/adminSuper.html" class="nav-item"
+            >SUPER ADMINS</a
+          >
+          <a href="/FOODIE/staff/adminProducts.html" class="nav-item"
+            >PRODUCTS</a
+          >
+          <a href="adminAddProduct.html" class="nav-item">ADD PRODUCTS</a>
+          <a href="/FOODIE/staff/adminOrders.html" class="nav-item">ORDERS</a>
+          <a href="/FOODIE/student/logout.php" class="nav-item">LOG OUT</a>
+        </nav>
+      </aside>
+
+      <!--MAIN CONTENT-->
+      <main class="main-content">
+        <header class="header-title">ADD PRODUCT</header>
+
+        <!-- Personal information section -->
+        <section class="info-section">
+          <h3 class="section-title">FILL IN THE DETAILS OF THE PRODUCT</h3>
+          <div class="box1">
+            <div class="types-description">
+              <span>Types &<br />Description </span>
+            </div>
+
+            <select
+              class="types-description-class"
+              name="types-description"
+              id="types-description"
+              required
+            >
+              <option value="">Instants</option>
+              <option value="male">Biscuits</option>
+              <option value="female">Sweet</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <a class="btn" href="/FOODIE/staff/adminAddProductFill.html"
+            >Choose Type<img
+              src="/FOODIE/images/check.png"
+              alt="Select"
+              width="14"
+              height="14"
+          /></a>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
