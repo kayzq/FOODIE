@@ -26,10 +26,10 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
         </div>
         <nav class="nav-menu">
           <a href="home.php" class="nav-item">HOME</a>
-          <a href="#" class="nav-item">SEARCH</a>
-          <a href="#" class="nav-item">RECEIPTS</a>
+          <a href="#" class="nav-item active">SEARCH</a>
+          <a href="receipt.php" class="nav-item">RECEIPTS</a>
           <a href="#" class="nav-item">CART, DORM &amp; DATES</a>
-          <a href="adminContact.php" class="nav-item active">ADMIN CONTACT</a>
+          <a href="adminContact.php" class="nav-item">ADMIN CONTACT</a>
           <a href="logout.php" class="nav-item">LOG OUT</a>
         </nav>
       </aside>

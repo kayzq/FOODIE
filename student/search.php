@@ -43,7 +43,7 @@ if (!isset($_SESSION['orderID']) || $_SESSION['orderID'] != "")
       <!--MAIN CONTENT-->
       <main class="main-content">
         <header class="header-title">Search</header>
-        <div class="card"><h3>Search with FOODIE.!</h3>
+        <div class="card"><h3>Search with FOODIE!</h3>
             </div>
         <!-- personal information section-->
         <section class="info-section">
