@@ -44,6 +44,7 @@ aside {
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .logo-container {
@@ -64,7 +65,7 @@ aside {
 .nav-menu {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 15px;
 }
 
 .nav-menu a:hover {
@@ -270,7 +271,6 @@ aside {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 15px;
-    margin-bottom: 20px;
   }
 
   .main-content {
