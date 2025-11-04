@@ -68,6 +68,10 @@ aside {
   gap: 25px;
 }
 
+.nav-menu a:hover {
+  color: var(--primary-color);
+}
+
 .nav-item {
   text-decoration: none;
   color: var(--text-dark);
@@ -78,12 +82,8 @@ aside {
   margin-bottom: 50px;
 }
 
-.nav-items.active {
+.nav-item.active {
   color: var(--text-light);
-}
-
-.nav-items:hover {
-  color: var(--primary-color);
 }
 
 /* Main content area */
@@ -97,7 +97,7 @@ aside {
 
 /* Header/title bar */
 .header-title {
-  background-color: var(--primary-color);
+  background-color: #7b002c;
   color: white;
   font-size: 48px;
   font-weight: bold;
@@ -107,42 +107,16 @@ aside {
 }
 
 /* Card styles */
-.profile-card-container,
 .info-section,
-.statistic-section {
-  background-color: white;
-  padding: 30px;
-  margin-bottom: 30px;
-  border-radius: var(--rounded-radius);
-  box-shadow: 4px 4px 2px rgba(0, 0, 0, 25%);
+.info-grid {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+  margin-right: 2%;
 }
 
-.profile-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.profile-picture img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #eee;
-  background-color: #eee;
-}
-
-.profile-info h2 {
-  font-size: 24px;
-  color: var(--text-dark);
-  margin-bottom: 5px;
-}
-
-.profile-info .role,
-.profile-info .gender {
-  color: var(--text-light);
-  font-size: 16px;
-  margin: 0;
+.info-section {
+  margin-right: 0;
 }
 
 /* Section Styling*/
@@ -155,37 +129,127 @@ aside {
   font-weight: bold;
 }
 
-.info-grid {
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  background-color: #7b002c;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  object-fit: contain;
 }
-.info-grid h3 {
-  text-align: center;
-  padding-bottom: 50px;
-  padding-top: 50px;
-}
-
-.info-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.info-label {
-  font-size: 14px;
-  font-weight: Light;
-  color: var(--text-light);
-  text-transform: uppercase;
-  margin-bottom: 5px;
+.icon-btn:hover {
+  background-color: #a0003a;
+  transform: scale(1.05);
 }
 
-.info-value {
-  font-size: 14px;
+p {
+  font-size: 18px;
+  color: #ce4257;
+  margin-top: 20px;
   font-weight: bold;
-  color: var(--text-dark);
-  text-transform: uppercase;
 }
 
-.order-id {
-  color: var(--primary-color);
+tr {
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 25%);
+  width: 76%;
 }
+
+/* Table container styling */
+.product-section {
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: var(--rounded-radius);
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 25%);
+  width: 100%;
+  display: block;
+}
+
+/* table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* table header styling */
+th {
+  background-color: #7b002c;
+  color: white;
+  padding: 15px 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* first header cell - rounded top-left corner */
+th:first-child {
+  border-top-left-radius: 15px;
+}
+
+/* last header cell - rounded top-right corner */
+th:last-child {
+  border-top-right-radius: 15px;
+}
+
+/* table cell styling */
+td {
+  padding: 15px 10px;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+/* row(even) coloring */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* buttons row */
+.button-row {
+  margin-top: 30px; text-align: center; 
+}
+
+.checkout-btn {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cancel-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #27ae60;
+  transform: scale(1.05);
+}
+
+.cancel-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+
 @media (max-width: 1024px) {
   .sidebar {
     width: 180px;
@@ -235,10 +299,6 @@ aside {
     padding: 15px 20px;
   }
 
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -255,3 +315,4 @@ aside {
     padding-bottom: 0;
   }
 }
+

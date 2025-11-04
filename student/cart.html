@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Cart, Dorm & Dates</title>
+  <link rel="stylesheet" href="cart.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo-container">
+        <div class="logo">FOODIE.</div>
+      </div>
+      <nav class="nav-menu">
+        <a href="home.php" class="nav-item">HOME</a>
+        <a href="search.php" class="nav-item">SEARCH</a>
+        <a href="receipts.html" class="nav-item">RECEIPTS</a>
+        <a href="cart.html" class="nav-item active">CART, DORM & DATES</a>
+        <a href="adminContact.php" class="nav-item">ADMIN CONTACT</a>
+        <a href="setting.html" class="nav-item">SETTINGS</a>
+        <a href="logout.php" class="nav-item">LOG OUT</a>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <header class="header-title">CART, DORM & DATES</header>
+
+      <!-- PRODUCT TABLE -->
+      <div class="product-section">
+        <table border="0">
+          <tr>
+            <th>Detail ID</th>
+            <th>Product Name</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Options</th>
+          </tr>
+
+          <tr>
+            <td>DT001</td>
+            <td>Chicken Rice</td>
+            <td>Meal</td>
+            <td>RM 6.00</td>
+            <td>1</td>
+            <td>RM 6.00</td>
+            <td>
+              <a href="#">
+                <img src="/FOODIE/images/edit_icon.png" alt="Edit" class="icon-btn" />
+              </a>
+              <a href="#">
+                <img src="/FOODIE/images/trash_icon.png" alt="Delete" class="icon-btn" />
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>DT002</td>
+            <td>Orange Juice</td>
+            <td>Drink</td>
+            <td>RM 3.00</td>
+            <td>2</td>
+            <td>RM 6.00</td>
+            <td>
+              <a href="#">
+                <img src="/FOODIE/images/edit_icon.png" alt="Edit" class="icon-btn" />
+              </a>
+              <a href="#">
+                <img src="/FOODIE/images/trash_icon.png" alt="Delete" class="icon-btn" />
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>DT003</td>
+            <td>Fruit Salad</td>
+            <td>Snack</td>
+            <td>RM 5.00</td>
+            <td>1</td>
+            <td>RM 5.00</td>
+            <td>
+              <a href="#">
+                <img src="/FOODIE/images/edit_icon.png" alt="Edit" class="icon-btn" />
+              </a>
+              <a href="#">
+                <img src="/FOODIE/images/trash_icon.png" alt="Delete" class="icon-btn" />
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- DATE & DORM INFO -->
+      <div class="info-grid">
+        <div class="info-section">
+          <h3 class="section-title">DATE INFORMATION</h3>
+          <p>Date Order:</p>
+          <input type="text" value="2025-11-04" readonly><br><br>
+
+          <p>Date of Delivery:</p>
+          <input type="date" name="delivery_date">
+        </div>
+
+        <div class="info-section">
+          <h3 class="section-title">DORM INFORMATION</h3>
+          <p>Dorm Level:</p>
+          <input type="text" placeholder="Enter level"><br><br>
+
+          <p>Dorm Number:</p>
+          <input type="text" placeholder="Enter room number"><br><br>
+
+          <p>Building:</p>
+          <input type="text" placeholder="Enter building name">
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="button-row">
+        <button class="checkout-btn">Checkout Order</button>
+        <button class="cancel-btn">Cancel Order</button>
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>

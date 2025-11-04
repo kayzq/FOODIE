@@ -44,7 +44,6 @@ aside {
   display: flex;
   align-items: center;
   flex-direction: column;
- 
   overflow-y: scroll;
 }
 
@@ -66,7 +65,7 @@ aside {
 .nav-menu {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 15px;
 }
 
 .nav-item {
