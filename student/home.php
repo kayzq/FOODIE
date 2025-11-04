@@ -1,31 +1,25 @@
 <?php
+  session_start();
+  include("studconnection.php");
 
-session_start();
-include("studconnection.php");
+  if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
+  {
+      header("Location:/FOODIE/landing-page/index.html");
+  }
 
-if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
-{
-    header("Location:/FOODIE/landing-page/index.html");
-}
-
-
-			
-				$studID = $_SESSION['studID'];
-			
-				$sql = "SELECT * FROM students s WHERE s.studID = '$studID'";
-				
-				$qry = mysqli_query($conn, $sql);
-				$row = mysqli_num_rows($qry);
-
-				if($row > 0)
-				{
-					$r = mysqli_fetch_assoc($qry);} 
-          
+  $studID = $_SESSION['studID'];
+  $sql = "SELECT * FROM students WHERE studID='$studID'";
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);
+  $studID = $row['studID'];
+  $studName = $row['studName'];
+  $studGender = $row['studGender'];
+  $studPhoneNo = $row['studPhoneNo'];
+  $matricNo = $row['MatricNo'];
+  $studIcNo = $row['studIcNo'];
+  $studEmail = $row['studEmail'];
 ?>
           
-
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -65,27 +59,24 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
               />
             </div>
             <div class="profile-info">
-              <h2><?php 
-              
-              $studID = $_SESSION['studID'];
-              $sql = "SELECT 
-                  TRIM(
-                    CASE
-                      WHEN studName LIKE '% BIN %' THEN SUBSTRING_INDEX(studName, ' BIN ', 1)
-                      WHEN studName LIKE '% BINTI %' THEN SUBSTRING_INDEX(studName, ' BINTI ', 1)
-                      ELSE studName
-                    END
-                  ) AS shortName
-                FROM students
-                WHERE studID = '$studID'" ;
-                $qry = mysqli_query($conn,$sql);
-                $result = mysqli_fetch_assoc($qry)['shortName'];
-                $shortname = ucwords(strtolower($result));
-                echo $shortname;
+              <h2>
+                <?php 
+                  echo $studName;
                 ?>
               </h2>
               <p class="role">Student</p>
-              <p class="gender"><?php if($r['studGender'] == 'M'){echo "Male";}else echo "Female" ; ?></p>
+              <p class="gender">
+                <?php 
+                  if($row['studGender'] == 'M')
+                    {
+                      echo "Male";
+                    }
+                  else 
+                  {
+                    echo "Female";
+                  }
+                ?>
+              </p>
             </div>
           </div>
         </section>
@@ -96,27 +87,58 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
           <div class="info-grid">
             <div class="info-item">
               <span class="info-label">NAME</span>
-              <span class="info-value"><?php echo $r['studName']; ?></span>
+              <span class="info-value">
+                <?php 
+                  echo $studName; 
+                ?>
+              </span>
             </div>
             <div class="info-item">
               <span class="info-label">IC NO</span>
-              <span class="info-value"><?php echo $r['studIcNo']; ?></span>
+              <span class="info-value">
+                <?php 
+                  echo $studIcNo; 
+                ?>
+              </span>
             </div>
             <div class="info-item">
               <span class="info-label">GENDER</span>
-              <spa class="info-value"><?php if($r['studGender'] == 'M'){echo "MALE";}else echo "FEMALE" ; ?></spa>
+              <span class="info-value">
+                <?php 
+                  if($studGender == 'M')
+                    {
+                      echo "MALE";
+                    }
+                  else
+                  {
+                    echo "FEMALE"; 
+                  }
+                ?>
+              </span>
             </div>
             <div class="info-item">
               <span class="info-label">Email Address</span>
-              <span class="info-value"><?php echo $r['studEmail']; ?></span>
+              <span class="info-value">
+                <?php 
+                  echo $studEmail; 
+                ?>
+              </span>
             </div>
             <div class="info-item">
               <span class="info-label">Phone No</span>
-              <span class="info-value"><?php echo $r['studPhoneNo']; ?></span>
+              <span class="info-value">
+                <?php 
+                  echo $studPhoneNo; 
+                ?>
+              </span>
             </div>
             <div class="info-item">
               <span class="info-label">Matric No</span>
-              <span class="info-value"><?php echo $r['MatricNo']; ?></span>
+              <span class="info-value">
+                <?php 
+                  echo $matricNo;
+                ?>
+            </span>
             </div>
           </div>
         </section>

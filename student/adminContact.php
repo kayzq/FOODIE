@@ -1,19 +1,17 @@
 <?php
-session_start();
-include("studconnection.php");
+  session_start();
+  include("studconnection.php");
 
-if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
-{
-    header("Location: /FOODIE/landing-page/index.html");
-    exit();
-}
+  if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
+  {
+      header("Location: /FOODIE/landing-page/index.html");
+      exit();
+  }
+?>
 
-$sql = "SELECT * FROM admins";
-$qry = mysqli_query($conn, $sql);
-
-echo '
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -23,10 +21,15 @@ echo '
 
   <body>
     <div class="container">
+
       <aside class="sidebar">
+
+        <!-- FOODIE LOGO -->
         <div class="logo-container">
           <div class="logo">FOODIE.</div>
         </div>
+    
+        <!-- SIDEBAR MENU -->
         <nav class="nav-menu">
           <a href="home.php" class="nav-item">HOME</a>
           <a href="search.php" class="nav-item">SEARCH</a>
@@ -36,61 +39,50 @@ echo '
           <a href="setting.html" class="nav-item">SETTINGS</a>
           <a href="logout.php" class="nav-item">LOG OUT</a>
         </nav>
+
       </aside>
 
       <!-- MAIN CONTENT -->
       <main class="main-content">
         <header class="header-title">ADMIN CONTACT</header>
-';
 
-while($r = mysqli_fetch_assoc($qry)) {
-    $adminID = $r['adminID'];
+        <?php
+          $sql = "SELECT * FROM admins";
+          $result = mysqli_query($conn, $sql);
 
-    // Extract short name (before "BIN"/"BINTI" or first word)
-    $sqlname = "SELECT 
-        TRIM(
-            CASE
-                WHEN adminName LIKE '% BIN %' THEN SUBSTRING_INDEX(adminName, ' BIN ', 1)
-                WHEN adminName LIKE '% BINTI %' THEN SUBSTRING_INDEX(adminName, ' BINTI ', 1)
-                ELSE SUBSTRING_INDEX(adminName, ' ', 1)
-            END
-        ) AS shortName
-    FROM admins 
-    WHERE adminID = '$adminID'";
-    
-    $qryName = mysqli_query($conn, $sqlname);
-    $result = mysqli_fetch_assoc($qryName);
+          if(mysqli_num_rows($result) > 0)
+          {
+            while($row = mysqli_fetch_assoc($result))
+            {
+              $adminName = $row['adminName'];
+              $adminPhoneNo = $row['adminPhoneNo'];
+              $adminEmail = $row['adminEmail'];
 
-    if(isset($result['shortName'])) {
-        $shortName = $result['shortName'];
-    } else {
-        $shortName = $r['adminName'];
-    }
-
-    $displayName = ucwords(strtolower($shortName));
-
-    echo '
-        <!-- Personal Information Section -->
-        <section class="info-section">
-          <h3 class="section-title">'.$displayName.'</h3>
-          <div class="info-grid">
-            <div class="info-item">
-              <span class="info-label">Email Address</span>
-              <span class="info-value">'.$r['adminEmail'].'</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Phone No</span>
-              <span class="info-value">'.$r['adminPhoneNo'].'</span>
-            </div>
-          </div>
-        </section>
-    ';
-}
-
-echo '
+              echo '
+                <!-- Personal Information Section -->
+                <section class="info-section">
+                  <h3 class="section-title">'.$adminName.'</h3>
+                  <div class="info-grid">
+                    <div class="info-item">
+                      <span class="info-label">Email Address</span>
+                      <span class="info-value">'.$adminEmail.'</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-label">Phone No</span>
+                      <span class="info-value">'.$adminPhoneNo.'</span>
+                    </div>
+                  </div>
+                </section> ';
+            }
+          }
+          
+          else
+          {
+            echo '<p>No admin contact information available.</p>';
+          }
+        ?>
       </main>
+
     </div>
   </body>
 </html>
-';
-?>
