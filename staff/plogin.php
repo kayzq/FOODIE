@@ -38,6 +38,7 @@ $row = mysqli_num_rows($qry);
             $_SESSION['adminPhoneNo'] = $r['adminPhoneNo'];
 			
 			
+			
 			//use when stud order product
 			$_SESSION['orderID'] = ""; //to create orderID
 			$_SESSION['logoutPermission'] = 1; //when stud select prod and that prod have in cart, this will prevent them to log out to the system [0=No 1=Yes]

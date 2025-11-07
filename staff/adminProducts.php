@@ -27,8 +27,8 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
         <nav class="nav-menu">
           <a href="adminDashboard.php" class="nav-item">DASHBOARD</a>
           <a href="adminSuper.html" class="nav-item">SUPER ADMINS</a>
-          <a href="adminProducts.html" class="nav-item active">PRODUCTS</a>
-          <a href="adminAddProduct.html" class="nav-item">ADD PRODUCTS</a>
+          <a href="adminProducts.php" class="nav-item active">PRODUCTS</a>
+          <a href="adminAddProduct.php" class="nav-item">ADD PRODUCTS</a>
           <a href="adminOrders.html" class="nav-item">ORDERS</a>
           <a href="/FOODIE/staff/logout.php" class="nav-item">LOG OUT</a>
         </nav>
@@ -67,7 +67,7 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
 							<td><?php echo $r['typeName']; ?></td>
 							<td>
               
-                <a href="adminEditProductFill.html?prodID=<?php echo $r['prodID']; ?>">
+                <a href="adminEditProductFill.php?prodID=<?php echo $r['prodID']; ?>">
                   <img
                     src="/FOODIE/images/edit_icon.png"
                     alt="Edit Icon"
