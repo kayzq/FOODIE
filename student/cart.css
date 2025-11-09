@@ -316,3 +316,11 @@ tr:nth-child(even) {
   }
 }
 
+input{
+  font-size:17px; 
+  width: 60%;
+}
+
+select{
+  width: 60%;
+}

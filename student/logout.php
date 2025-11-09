@@ -6,7 +6,7 @@ include("studconnection.php");
 if(!isset($_SESSION['logoutPermission']) || $_SESSION['logoutPermission'] == 0) //No
 {
 	echo"<script language='javascript'>
-	alert('You must cancel or checkout your order before log out!');window.location='history.back()';</script>";
+	alert('You must cancel or checkout your order before log out!');window.location='cart.php';</script>";
 }
 else
 {

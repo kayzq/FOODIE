@@ -34,7 +34,7 @@ if (!isset($_SESSION['orderID']) || $_SESSION['orderID'] != "")
           <a href="home.php" class="nav-item">HOME</a>
           <a href="" class="nav-item active">SEARCH</a>
           <a href="receipts.html" class="nav-item">RECEIPTS</a>
-          <a href="cart.html" class="nav-item">CART, DORM & DATES</a>
+          <a href="cart.php" class="nav-item">CART, DORM & DATES</a>
           <a href="adminContact.php" class="nav-item">ADMIN CONTACT</a>
           <a href="setting.php" class="nav-item">SETTINGS</a>
           <a href="logout.php" class="nav-item">LOG OUT</a>
