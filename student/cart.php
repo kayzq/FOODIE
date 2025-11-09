@@ -82,7 +82,7 @@
 								<td><?php echo $r['quantity']; ?></td>
 								<td><?php echo "RM ", number_format($r['price'] * $r['quantity'], 2);?></td>
 						<td>	
-              <a id="edit" href="editcart.php?detailID=<?php echo $r['detailID']; ?>">
+              <a id="edit" href="editQCart.php?detailID=<?php echo $r['detailID']; ?>">
                 <img src="/FOODIE/images/edit_icon.png" alt="Edit" class="icon-btn" />
               </a>
               <a id="del" onclick="return confirm('Delete this product?');" href="delete.php?detailID=<?php echo $r['detailID']; ?>">
