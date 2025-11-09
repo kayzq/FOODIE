@@ -27,17 +27,17 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
           <div class="logo">FOODIE.</div>
         </div>
         <nav class="nav-menu">
-          <a href="/FOODIE/staff/adminDashboard.html" class="nav-item active"
+          <a href="/FOODIE/staff/adminDashboard.php" class="nav-item active"
             >DASHBOARD</a
           >
-          <a href="/FOODIE/staff/adminSuper.html" class="nav-item"
+          <a href="/FOODIE/staff/adminSuper.php" class="nav-item"
             >SUPER ADMINS</a
           >
           <a href="/FOODIE/staff/adminProducts.php" class="nav-item"
             >PRODUCTS</a
           >
           <a href="adminAddProduct.php" class="nav-item">ADD PRODUCTS</a>
-          <a href="/FOODIE/staff/adminOrders.html" class="nav-item">ORDERS</a>
+          <a href="/FOODIE/staff/adminOrders.php" class="nav-item">ORDERS</a>
           <a href="/FOODIE/staff/logout.php" class="nav-item">LOG OUT</a>
         </nav>
       </aside>

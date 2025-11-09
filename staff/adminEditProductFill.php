@@ -58,8 +58,8 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
           <div class="logo">FOODIE.</div>
         </div>
         <nav class="nav-menu">
-          <a href="adminDashboard.html" class="nav-item">DASHBOARD</a>
-          <a href="adminSuper.html" class="nav-item">SUPER ADMINS</a>
+          <a href="adminDashboard.php" class="nav-item">DASHBOARD</a>
+          <a href="adminSuper.php" class="nav-item">SUPER ADMINS</a>
           <a href="adminProducts.php" class="nav-item active">PRODUCTS</a>
           <a href="adminAddProduct.php" class="nav-item">ADD PRODUCTS</a>
           <a href="adminOrders.html" class="nav-item">ORDERS</a>
