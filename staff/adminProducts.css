@@ -318,3 +318,29 @@ tr:last-child td:last-child {
     padding-bottom: 0;
   }
 }
+
+.btn{
+  
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: #5ab071;
+    border-radius: 30px;
+    width: 150px;
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: regular;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+    transition: 0.3s 
+ease;
+    border: none;
+}
+
+.btn:hover {
+  background-color: #4a9a62;
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}

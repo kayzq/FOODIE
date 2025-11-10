@@ -303,7 +303,7 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
 									datasets: 
 									[
 									{
-										label: 'Total Sales',
+										label: 'Total Sales(RM)',
 										backgroundColor     : 'rgba(60,141,188,0.9)',
 										borderColor         : 'rgba(60,141,188,0.8)',
 										pointRadius          : false,
