@@ -128,7 +128,7 @@ if(isset($_POST['checkout'])) // when click on Update button
 						$_SESSION['logoutPermission'] = 1;
 						$_SESSION['order4Receipt'] = $_SESSION['orderID']; //for display at receipt menu
 						$_SESSION['orderID'] = ""; //stud can order again with new orderID
-						echo"<script language='javascript'>alert('Order has been checkout. Sending receipt through email...');window.location='receipt.html';</script>";
+						echo"<script language='javascript'>alert('Order has been checkout. Sending receipt through email...');window.location='receipt.php';</script>";
 					}
 					else
 					{
