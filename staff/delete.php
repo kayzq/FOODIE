@@ -4,16 +4,11 @@ include("adminconnection.php");
 
 $id = $_GET['prodID'];
 	
-$delOD = mysqli_query($conn, "DELETE FROM orderdetails WHERE prodID='$id'");
+$del = mysqli_query($conn, "UPDATE products set is_active = '0' WHERE prodID='$id'");
 
-if($delOD)
+if($del)
 {
-	$del = mysqli_query($conn, "DELETE FROM products WHERE prodID='$id'");
-
 	
-	if($del)
-	{
-		mysqli_close($conn);
 		echo
 		"<script language='javascript'>
 		alert('Product has been deleted successfully.');
@@ -28,13 +23,6 @@ if($delOD)
 		window.location='adminProducts.php';
 		</script>";
 	}
-}
-else
-{
-	echo 
-	"<script language='javascript'>
-	alert('Error! Failed to delete product');
-	window.location='adminProducts.php';
-	</script>";
-}
+
+
 ?>

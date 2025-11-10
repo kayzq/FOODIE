@@ -50,7 +50,7 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
 
         <?php
 			
-				$sql = "SELECT * FROM products p INNER JOIN prodtypes t ON p.typeID = t.typeID ORDER BY p.prodID";
+				$sql = "SELECT * FROM products p INNER JOIN prodtypes t ON p.typeID = t.typeID WHERE is_active = '1' ORDER BY p.prodID";
 				
 				$qry = mysqli_query($conn, $sql);
 				$row = mysqli_num_rows($qry);
@@ -98,6 +98,54 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
         <?php
         }
         ?>
+
+              <?php
+     
+        $deleted_sql = "SELECT * FROM products p 
+                        INNER JOIN prodtypes t ON p.typeID = t.typeID 
+                        WHERE is_active = '0' 
+                        ORDER BY p.prodID";
+
+        $deleted_qry = mysqli_query($conn, $deleted_sql);
+        $deleted_row = mysqli_num_rows($deleted_qry);
+
+        
+        if($deleted_row > 0) {
+        ?>
+          
+            <table border="0">
+                <tr>
+                    <th>Detail ID</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Description</th> 
+                    <th>Type</th> 
+                    <th>Options</th> 
+                </tr>
+
+                <?php while($r = mysqli_fetch_array($deleted_qry)) { ?>
+                <tr>
+                    <td><?php echo $r['prodID']; ?></td>
+                    <td><?php echo $r['prodName']; ?></td>
+                    <td><?php echo $r['price']; ?></td>
+                    <td><?php echo $r['prodDesc']; ?></td>
+                    <td><?php echo $r['typeName']; ?></td>
+                    <td>
+                        <a class="btn" href="retrieve.php?prodID=<?php echo $r['prodID']; ?>">
+                            Retrieve Product
+                        </a>
+                    </td>
+                </tr>
+                <?php } ?>
+            </table>
+
+            <p>Total Deleted Product(s): <?php echo $deleted_row; ?></p>
+
+        <?php
+        } 
+        ?>
+
+     
       </main>
     </div>
   </body>

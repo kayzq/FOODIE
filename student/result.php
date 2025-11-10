@@ -90,32 +90,33 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
             </tr>
 
             <?php
-            // Sanitize input
-            $prodtypes = mysqli_real_escape_string($conn, $_GET["typeID"]);
-            $keywords = mysqli_real_escape_string($conn, $_GET["keyword"]);
-            $sortByPrice = $_GET["sortBy"];
+                        // Sanitize input
+              $prodtypes = mysqli_real_escape_string($conn, $_GET["typeID"]);
+              $keywords = mysqli_real_escape_string($conn, $_GET["keyword"]);
+              $sortByPrice = $_GET["sortBy"];
 
-            // Choose sorting column
-            $orderBy = ($sortByPrice == 'Price') ? 'p.price' : 'p.prodName';
+              // Choose sorting column
+              $orderBy = ($sortByPrice == 'Price') ? 'p.price' : 'p.prodName';
 
-            // Build base SQL
-            $sql = "SELECT DISTINCT p.prodID,p.prodName, t.typeName, p.price 
-                    FROM products p 
-                    INNER JOIN prodtypes t ON p.typeID = t.typeID
-                    WHERE 1=1";
+              // Build base SQL — only active products
+              $sql = "SELECT DISTINCT p.prodID, p.prodName, t.typeName, p.price 
+                      FROM products p 
+                      INNER JOIN prodtypes t ON p.typeID = t.typeID
+                      WHERE p.is_active = '1'";
 
-            // ✅ If not 'ALL', filter by selected type
-            if (!empty($prodtypes) && $prodtypes != "ALL") {
-                $sql .= " AND p.typeID = '$prodtypes'";
-            }
+              // ✅ If not 'ALL', filter by selected type
+              if (!empty($prodtypes) && $prodtypes != "ALL") {
+                  $sql .= " AND p.typeID = '$prodtypes'";
+              }
 
-            // ✅ If keyword entered, show products that START with the word
-            if (!empty($keywords)) {
-                $sql .= " AND LOWER(p.prodName) LIKE LOWER('$keywords%')";
-            }
+              // ✅ If keyword entered, show products that START with the word
+              if (!empty($keywords)) {
+                  $sql .= " AND LOWER(p.prodName) LIKE LOWER('$keywords%')";
+              }
 
-            // ✅ Add sorting
-            $sql .= " ORDER BY $orderBy";
+              // ✅ Add sorting
+              $sql .= " ORDER BY $orderBy";
+
 
             // Execute query
             $qry = mysqli_query($conn, $sql);
