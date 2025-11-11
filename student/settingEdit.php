@@ -14,19 +14,19 @@
 
   if(isset($_POST["edit"]))
   {
-    $studentName = $_POST["studName"];
-    $studentGender = $_POST["studGender"];
-    $studentPhone = $_POST["studPhoneNo"];
+    $studName = $_POST["studName"];
+    $studGender = $_POST["studGender"];
+    $studPhoneNo = $_POST["studPhoneNo"];
     $MatricNo = $_POST["MatricNo"];
-    $IcNumber = $_POST["studIcNo"];
-    $studentEmail = $_POST["studEmail"];
-    $studentPassword = $_POST["password"];
+    $studIcNo = $_POST["studIcNo"];
+    $studEmail = $_POST["studEmail"];
+    $password = $_POST["password"] ?? $row["password"]; // keeps old password if not edited
 
     $update = "UPDATE students 
-              SET studentName='$studName', studentGender='$studGender', studentPhone='$studPhoneNo', 
-                  MatricNo='$MatricNo', IcNumber='$studIcNo', studentEmail='$studEmail', studentPassword='$password'
-              WHERE studID='$studID'";
-      
+               SET studName='$studName', studGender='$studGender', studPhoneNo='$studPhoneNo',
+               MatricNo='$MatricNo', studIcNo='$studIcNo', studEmail='$studEmail', password='$password'
+               WHERE studID='$studID'";
+
     $run = mysqli_query($conn, $update);
 
     if($run)
@@ -42,8 +42,8 @@
       alert('Error! Failed to update details of student.');
       window.location='/FOODIE/student/settingEdit.php';
       </script>";
+    }
   }
-}
 
   if(isset($_POST['Cancel']))
   {
@@ -84,37 +84,82 @@
             <div class="form-group">
               <label for="detailID">Student ID: </label>
               <span><?php echo $row['studID'] ?></span>
-              <input type="hidden" id="studentID" name="studentID" value="<?php echo $row['studID'] ?>"/>
+              <input type="hidden" id="studID" name="studID" value="<?php echo $row['studID'] ?>"/>
             </div>
 
             <div class="form-group">
               <label for="studentName">Student Name</label>
-              <input type="text" id="studentName" name="studentName" value="<?php echo $row['studName'] ?>" placeholder="<?php echo $row['studName'] ?>" maxlength="45" style="font-size:17px;"/>
+              <input type="text" id="studName" name="studName" 
+                value="<?php echo $row['studName'] ?>" 
+                placeholder="<?php echo $row['studName'] ?>"  
+                style="font-size:17px;"
+                required
+              />
             </div>
 
             <div class="form-group">
               <label for="studentGender">Gender</label>
-              <input type="text" id="studentGender" name="studentGender" value="<?php echo $row['studGender'] ?>" placeholder="<?php echo $row['studGender'] ?>" maxlength="45" style="font-size:17px;"/>
+              <select id="studGender" name="studGender">
+                <option value="M" <?php if($row['studGender'] == 'M') echo 'selected'; ?>>Male</option>
+                <option value="F" <?php if($row['studGender'] == 'F') echo 'selected'; ?>>Female</option>
+              </select>
             </div>
 
             <div class="form-group">
               <label for="studentPhoneNo">Phone No</label>
-              <input type="text" id="studentPhoneNo" name="studentPhoneNo" value="<?php echo $row['studPhoneNo'] ?>" placeholder="<?php echo $row['studPhoneNo'] ?>" maxlength="45" style="font-size:17px;"/>
+              <input type="text" id="studPhoneNo" name="studPhoneNo"
+                value="<?php echo $row['studPhoneNo']; ?>"
+                placeholder="<?php echo $row['studPhoneNo']; ?>"
+                title="Please enter a valid Malaysian phone number (e.g. 0123456789)"
+                minlength="9"
+                maxlength="11"
+                required
+                style="font-size:17px;"
+              />
             </div>
             
             <div class="form-group">
-              <label for="Matric No">Matric No</label>
-              <input type="text" id="Matric No" name="Matric No" value="<?php echo $row['MatricNo'] ?>" placeholder="<?php echo $row['MatricNo'] ?>" maxlength="45" style="font-size:17px;"/>
+              <label for="MatricNo">Matric No</label>
+              <input type="text" id="MatricNo" name="MatricNo"
+                value="<?php echo $row['MatricNo']; ?>"
+                placeholder="<?php echo $row['MatricNo']; ?>"
+                title="Matric number must be 8-12 letters or numbers (no spaces)"
+                maxlength="12"
+                required
+                style="font-size:17px;"
+              />
             </div>
 
             <div class="form-group">
-              <label for="Student Ic Number">Ic Number</label>
-              <input type="text" id="Student Ic Number" name="Student Ic Number" value="<?php echo $row['studIcNo'] ?>" placeholder="<?php echo $row['studIcNo'] ?>" maxlength="45" style="font-size:17px;"/>
+              <label for="studIcNo">Ic Number</label>
+              <input type="text" id="studIcNo" name="studIcNo"
+                value="<?php echo $row['studIcNo']; ?>"
+                placeholder="<?php echo $row['studIcNo']; ?>"
+                title="IC number must be exactly 12 digits (e.g. 030405011234)"
+                minlength="12"
+                maxlength="12"
+                required
+                style="font-size:17px;"
+              />
             </div>
 
             <div class="form-group">
               <label for="studentEmail">Student Email</label>
-              <input type="text" id="studentEmail" name="studentEmail" value="<?php echo $row['studEmail'] ?>" placeholder="<?php echo $row['studEmail'] ?>" maxlength="45" style="font-size:17px;"/>
+              <input type="email" id="studEmail" name="studEmail"
+                value="<?php echo $row['studEmail'] ?>"
+                placeholder="<?php echo $row['studEmail'] ?>"
+                style="font-size:17px;"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password"
+                placeholder="Leave blank to keep current password"
+                minlength="8"
+                style="font-size:17px;"
+              />
             </div>
 
             <button type="submit" id="edit" name="edit" title="Button to update details of student" class="btn">
