@@ -36,7 +36,7 @@ if(isset($_POST["add"])) {
     $run = mysqli_query($conn, $insert);
 
     if($run) {
-        echo "<script>alert('New admin added successfully!'); window.location='/FOODIE/staff/adminSuper.php';</script>";
+        echo "<script>alert('New admin added successfully!'); window.location='/FOODIE/staff/adminSuperChoose.html';</script>";
     } else {
         echo "<script>alert('Error: Failed to add new admin.');</script>";
     }
