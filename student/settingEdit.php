@@ -92,6 +92,7 @@
               <input type="text" id="studName" name="studName" 
                 value="<?php echo $row['studName'] ?>" 
                 placeholder="<?php echo $row['studName'] ?>"
+                title="Please put characters not more than 255."
                 maxlength="255"
                 style="font-size:17px;"
                 required
@@ -150,6 +151,7 @@
               <input type="email" id="studEmail" name="studEmail"
                 value="<?php echo $row['studEmail'] ?>"
                 placeholder="<?php echo $row['studEmail'] ?>"
+                title="Please put characters not more than 255."
                 maxlength="255"
                 style="font-size:17px;"
                 required
