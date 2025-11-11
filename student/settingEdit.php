@@ -31,14 +31,14 @@
 
     if($run)
     {
-      echo "<script language='javascript'>
+      echo "<script>
       alert('Details of student have been updated successfully.');
       window.location='/FOODIE/student/setting.php';
       </script>";
     }
     else
     {
-      echo "<script language='javascript'>
+      echo "<script>x
       alert('Error! Failed to update details of student.');
       window.location='/FOODIE/student/settingEdit.php';
       </script>";
@@ -91,7 +91,8 @@
               <label for="studentName">Student Name</label>
               <input type="text" id="studName" name="studName" 
                 value="<?php echo $row['studName'] ?>" 
-                placeholder="<?php echo $row['studName'] ?>"  
+                placeholder="<?php echo $row['studName'] ?>"
+                maxlength="255"
                 style="font-size:17px;"
                 required
               />
@@ -123,7 +124,8 @@
               <input type="text" id="MatricNo" name="MatricNo"
                 value="<?php echo $row['MatricNo']; ?>"
                 placeholder="<?php echo $row['MatricNo']; ?>"
-                title="Matric number must be 8-12 letters or numbers (no spaces)"
+                title="Matric number must be 3-12 letters or numbers (no spaces)"
+                minlength="3"
                 maxlength="12"
                 required
                 style="font-size:17px;"
@@ -148,6 +150,7 @@
               <input type="email" id="studEmail" name="studEmail"
                 value="<?php echo $row['studEmail'] ?>"
                 placeholder="<?php echo $row['studEmail'] ?>"
+                maxlength="255"
                 style="font-size:17px;"
                 required
               />
@@ -158,6 +161,7 @@
               <input type="password" id="password" name="password"
                 placeholder="Leave blank to keep current password"
                 minlength="8"
+                maxlength="255"
                 style="font-size:17px;"
               />
             </div>

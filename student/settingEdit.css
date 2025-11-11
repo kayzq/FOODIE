@@ -125,32 +125,6 @@ aside {
   font-weight: bold;
 }
 
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px 40px;
-}
-
-.info-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.info-label {
-  font-size: 14px;
-  font-weight: Light;
-  color: var(--text-light);
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-
-.info-value {
-  font-size: 14px;
-  font-weight: bold;
-  color: var(--text-dark);
-  text-transform: uppercase;
-}
-
 .icon-btn {
   margin-top: 20px;
   width: 36px;
@@ -220,11 +194,6 @@ aside {
 }
 
 /* Form styles */
-.product-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 .form-group {
   margin-bottom: 30px; /* Space between fields */
 }
@@ -248,31 +217,25 @@ input[type="email"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-  height: 35px; /* Ensures a good height for the input box */
+  box-sizing: border-box;
+  height: 35px;
 }
 
 input[type="password"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-  height: 35px; /* Ensures a good height for the input box */
+  box-sizing: border-box;
+  height: 35px;
 }
 
 select[id="studGender"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-  height: 35px; /* Ensures a good height for the input box */
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align elements to the left */
-  padding: 20px;
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 17px;
 }
 
 /* --- Label Styling --- */
@@ -281,25 +244,6 @@ label {
   font-weight: bold;
   color: #333;
   margin-bottom: 5px;
-}
-
-/* --- Input Field Styling --- */
-.password-input {
-  width: 250px;
-  height: 40px;
-  padding: 10px;
-  margin-bottom: 25px; /* Space between input and button */
-  border: none;
-  background-color: #e0e0e0; /* Gray background color */
-  box-sizing: border-box;
-}
-
-.choose {
-  margin-top: 50px;
-  display: flex;
-  gap: 200px;
-  justify-content: center;
-  align-items: center;
 }
 
 @media (max-width: 1024px) {
