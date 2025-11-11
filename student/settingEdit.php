@@ -1,18 +1,19 @@
 <?php
-session_start();
-include("studconnection.php");
+  session_start();
+  include("studconnection.php");
 
-if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
-{
-    header("Location: /FOODIE/landing-page/index.html");
-}
+  if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
+  {
+      header("Location: /FOODIE/landing-page/index.html");
+  }
 
-$studID = $_SESSION['studID'];
-$sql = "SELECT * FROM students WHERE studID='$studID'";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
+  $studID = $_SESSION['studID'];
+  $sql = "SELECT * FROM students WHERE studID='$studID'";
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);
 
-if(isset($_POST["edit"])) {
+  if(isset($_POST["edit"]))
+  {
     $studentName = $_POST["studName"];
     $studentGender = $_POST["studGender"];
     $studentPhone = $_POST["studPhoneNo"];
@@ -22,28 +23,32 @@ if(isset($_POST["edit"])) {
     $studentPassword = $_POST["password"];
 
     $update = "UPDATE students 
-               SET studentName='$studName', studentGender='$studGender', studentPhone='$studPhoneNo', 
-                   MatricNo='$MatricNo', IcNumber='$studIcNo', studentEmail='$studEmail', studentPassword='$password'
-               WHERE studID='$studID'";
-    
+              SET studentName='$studName', studentGender='$studGender', studentPhone='$studPhoneNo', 
+                  MatricNo='$MatricNo', IcNumber='$studIcNo', studentEmail='$studEmail', studentPassword='$password'
+              WHERE studID='$studID'";
+      
     $run = mysqli_query($conn, $update);
 
-    if($run) {
-        echo "<script language='javascript'>
-        alert('Details of student have been updated successfully.');
-        window.location='/FOODIE/student/setting.php';
-        </script>";
-    } else {
-        echo "<script language='javascript'>
-        alert('Error! Failed to update details of student.');
-        window.location='/FOODIE/student/settingEdit.php';
-        </script>";
+    if($run)
+    {
+      echo "<script language='javascript'>
+      alert('Details of student have been updated successfully.');
+      window.location='/FOODIE/student/setting.php';
+      </script>";
     }
+    else
+    {
+      echo "<script language='javascript'>
+      alert('Error! Failed to update details of student.');
+      window.location='/FOODIE/student/settingEdit.php';
+      </script>";
+  }
 }
 
-if(isset($_POST['Cancel'])) {
-    echo "<script language='javascript'>history.back();</script>";
-}
+  if(isset($_POST['Cancel']))
+  {
+      echo "<script language='javascript'>history.back();</script>";
+  }
 ?>
 
 <!DOCTYPE html>
@@ -103,9 +108,8 @@ if(isset($_POST['Cancel'])) {
             </div>
 
             <div class="form-group">
-              <label for="studentIcNo">Student IC: </label>
-              <span><?php echo $row['studIcNo'] ?></span>
-              <input type="hidden" id="studentIcNo" name="studentIcNo" value="<?php echo $row['studIcNo'] ?>"/>
+              <label for="Student Ic Number">Ic Number</label>
+              <input type="text" id="Student Ic Number" name="Student Ic Number" value="<?php echo $row['studIcNo'] ?>" placeholder="<?php echo $row['studIcNo'] ?>" maxlength="45" style="font-size:17px;"/>
             </div>
 
             <div class="form-group">
