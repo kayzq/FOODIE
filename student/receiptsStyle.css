@@ -252,3 +252,8 @@ aside {
     padding-bottom: 0;
   }
 }
+
+.clickhere{
+  text-decoration: underline;
+  color: rgb(35, 1, 123);
+}
