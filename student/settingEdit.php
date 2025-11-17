@@ -137,16 +137,22 @@
 
               <!--PROFILE PICTURE-->
               <div class="form-group">
-                <label for="studentName">Profile Pic: </label>
+                <label for="user_image">Cuurent Pic:</label>
                 <div class="profile-pic-container">
-                    <input 
-                      type="file" 
-                      id="user_image" 
-                      name="user_image"
-                      accept=".jpg, .jpeg, .png, .gif"
-                      style="font-size:17px;"
-                    />
-                  </div>
+                  <!-- Show current image -->
+                  <img 
+                    src="/FOODIE/images/studentImages/<?php echo !empty($row['user_image']) ? $row['user_image'] : 'default_student.png'; ?>" 
+                    alt="Current Profile Picture" 
+                  />
+                  <!-- File input to upload new image -->
+                  <input 
+                    type="file" 
+                    id="user_image" 
+                    name="user_image"
+                    accept=".jpg, .jpeg, .png, .gif"
+                    style="font-size:17px;"
+                  />
+                </div>
               </div>
 
               <!--STUDENT NAME-->
