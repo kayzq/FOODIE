@@ -14,27 +14,54 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
 
       $data = mysqli_fetch_array($qry); // fetch data
 
-      if(isset($_POST['Update'])) // when click on Update button
-      {
-        $prodName = $_POST['prodName'];
-        $price = $_POST['price'];
-          $prodDesc = $_POST['prodDesc'];
-        $typeID = $_POST['typeID'];
-        
-          $update = "UPDATE products SET prodName='$prodName', price='$price', prodDesc='$prodDesc', typeID='$typeID' WHERE prodID='$prodID'";
+      if(isset($_POST['Update']))
+        {
+            $prodName = $_POST['prodName'];
+            $price = $_POST['price'];
+            $prodDesc = $_POST['prodDesc'];
+            $typeID = $_POST['typeID'];
 
-        $run=mysqli_query($conn,$update);
-        
-        if($run)
-        {
-          echo"<script language='javascript'>
-          alert('Details of product has been updated successfully.');window.location='/FOODIE/staff/adminProducts.php';</script>";
+            // Folder path to store images
+            $targetDir = "../images/";
+            
+            // Check if new file uploaded
+            if(!empty($_FILES["prodImage"]["name"]))
+            {
+                $fileName = basename($_FILES["prodImage"]["name"]);
+                $targetFilePath = $targetDir . $fileName;
+
+                // Delete old image if exists
+                if(!empty($data['images']) && file_exists($targetDir.$data['images'])){
+                    unlink($targetDir.$data['images']);
+                }
+
+                // Upload new image to folder
+                if(move_uploaded_file($_FILES["prodImage"]["tmp_name"], $targetFilePath)){
+                    $update = "UPDATE products SET prodName='$prodName', price='$price', prodDesc='$prodDesc', typeID='$typeID', images='$fileName' WHERE prodID='$prodID'";
+                } 
+                else {
+                    echo "<script>alert('Image upload failed!');</script>";
+                }
+            }
+            else
+            {
+                // Update without changing image
+                $update = "UPDATE products SET prodName='$prodName', price='$price', prodDesc='$prodDesc', typeID='$typeID' WHERE prodID='$prodID'";
+            }
+
+            $run = mysqli_query($conn, $update);
+
+            if($run)
+            {
+                echo"<script>alert('Product updated successfully.');window.location='/FOODIE/staff/adminProducts.php';</script>";
+            }
+            else
+            {
+                echo"<script>alert('Error updating product.');window.location='/FOODIE/staff/adminProducts.php';</script>";
+            }
         }
-        else
-        {
-          echo "<script language='javascript'>alert('Error! Failed to update details of product.');window.location='/FOODIE/staff/adminProduct.php';</script>";
-        }
-      }
+
+
       if(isset($_POST['Cancel']))
       {
         echo"<script language='javascript'>history.back();</script>";
@@ -74,7 +101,7 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
         <!-- Personal information section -->
         <section class="info-section">
           <h3 class="section-title">EDIT PRODUCT</h3>
-        <form method="POST" class="product-form">
+        <form method="POST" class="product-form" enctype="multipart/form-data">
           
             <div class="form-group">
               <label for="detailID">Detail ID</label>
@@ -98,6 +125,13 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
             </div>
 
             <div class="form-group">
+              <label for="description">Product picture</label>
+              <img src="../images/<?php echo $data['images']; ?>" width="100" style="border-radius:10px;">
+
+              <input type="file" name="prodImage" id="desc" accept=".jpg, .jpeg, .png, .gif" style="font-size:17px;" class="upload-label"/>
+            </div>
+
+            <div class="form-group">
               <label for="productTypeID">Product type ID</label>
               <div class="product-type-row">
                <select name="typeID" id="typeID" class="product-type-input"  style="height: 35px">
@@ -107,7 +141,7 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
                                   $qryprodtypes = mysqli_query($conn, $sqlprodtypes);
                                   $rowprodtypes= mysqli_num_rows($qryprodtypes);
                 
-                    if($rowprodtypes > 0)
+                                  if($rowprodtypes > 0)
                                   {
                                       while($dprodtypes = mysqli_fetch_assoc($qryprodtypes))
                                       {
@@ -115,7 +149,7 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
                                               echo "<option value='".$dprodtypes['typeID']."'selected>".$dprodtypes['typeName']." (".$dprodtypes['typeDesc'].")"."</option>";
                                           else
                                               echo "<option value='".$dprodtypes['typeID']."'>".$dprodtypes['typeName']." (".$dprodtypes['typeDesc'].")"."</option>";
-                      }
+                                        }
                                   }
                   ?>
             </select>

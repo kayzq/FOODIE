@@ -373,3 +373,7 @@ input[type="text"] {
     padding-bottom: 0;
   }
 }
+
+.upload-label{
+  display: block;
+}

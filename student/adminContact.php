@@ -47,7 +47,7 @@
         <header class="header-title">ADMIN CONTACT</header>
 
         <?php
-          $sql = "SELECT * FROM admins";
+          $sql = "SELECT * FROM admins where is_active = '1'";
           $result = mysqli_query($conn, $sql);
 
           if(mysqli_num_rows($result) > 0)

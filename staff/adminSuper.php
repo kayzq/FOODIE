@@ -40,7 +40,7 @@ if(isset($_POST['login'])) {
         </div>
         <nav class="nav-menu">
           <a href="adminDashboard.php" class="nav-item">DASHBOARD</a>
-          <a href="adminSuperLogin.php" class="nav-item active">SUPER ADMIN</a>
+          <a href="adminSuper.php" class="nav-item active">SUPER ADMINS</a>
           <a href="adminProducts.php" class="nav-item">PRODUCTS</a>
           <a href="adminAddProduct.php" class="nav-item">ADD PRODUCTS</a>
           <a href="adminOrders.php" class="nav-item">ORDERS</a>

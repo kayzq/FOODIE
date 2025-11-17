@@ -331,7 +331,7 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
                   },
                   title: {
                         display: true,
-                        text: 'Monthly Sales Overview',
+                        text: 'Weekly Sales Overview',
                         color: '#333',
                         font: { size: 18, family: 'Circular Std Book' }
                       }
