@@ -21,9 +21,6 @@
   box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.3);
 }
 
-.logo:hover {
-  cursor: pointer;
-}
 
 .navbar a {
   color: #1f2937;
