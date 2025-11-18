@@ -67,6 +67,7 @@
                 $adminGender = $row['adminGender'];
                 $adminIcNo = $row['adminIcNo'];
                 $isActive = $row['is_active'];
+                $adminImages = $row['adminImage'];
 
                 // Add color or style for inactive admins
                 $sectionClass = $isActive ? "info-section" : "info-section inactive";
@@ -76,7 +77,10 @@
                 <section class="'.$sectionClass.'">
                   <div class="info-wrapper">
                     <div class="admin-img">
-                      <img src="'.($row['adminImage'] ?? '/FOODIE/images/adminsImages/default_admin.png').'" alt="Admin Image" />
+                      <img src="'.(!empty($row['adminImage']) 
+                                  ? $row['adminImage'] 
+                                  : '/FOODIE/images/adminsImages/default_admin.png'
+                              ).'" />
                     </div>
                     <div class="info-grid">
                       <h3 class="section-title">

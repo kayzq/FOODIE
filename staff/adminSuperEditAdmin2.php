@@ -20,8 +20,9 @@
             $adminPhone = $_POST["adminPhoneNo"];
             $username = $_POST["username"];
 
-            $profileImage = $row['adminImage']; // current image path
-
+            $profileImage = !empty($row['adminImage']) 
+                ? $row['adminImage'] 
+                : '/FOODIE/images/adminsImages/default_admin.png';
           if(!empty($_FILES['adminImage']['name'])) {
 
               $fileName = $_FILES['adminImage']['name'];
@@ -43,7 +44,7 @@
 
               // New filename
               $random = rand(10000, 99999);
-              $newName = "admin_" . $studID . "_" . $random . "." . $ext;
+              $newName = "admin_" . $adminID . "_" . $random . "." . $ext;
 
               // REAL server directory
               $targetDir = $_SERVER['DOCUMENT_ROOT'] . "/FOODIE/images/adminsImages/";
@@ -194,7 +195,7 @@
 
                 <div class="form-group">
                   <label>Current Profile Picture</label><br>
-                  <img 
+                  <img
                     src="<?php echo !empty($row['adminImage']) ? $row['adminImage'] : '/FOODIE/images/adminsImages/default_admin.png'; ?>" 
                     width="120" 
                     style="border-radius:8px;"

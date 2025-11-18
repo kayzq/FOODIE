@@ -62,9 +62,12 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
 
           <div class="info-wrapper">  <!-- THIS is the flex container -->
 
-              <div class="admin-img">
-                <img src="<?php echo $r['adminImage']; ?>" alt="Profile Picture">
-              </div>
+          <div class="admin-img">
+              <img src="<?php echo isset($r['adminImage']) && !empty($r['adminImage']) 
+                  ? $r['adminImage'] 
+                  : '/FOODIE/images/adminsImages/default_admin.png'; ?>" 
+              alt="Admin Image" />
+          </div>
 
               <div class="info-grid">
 
