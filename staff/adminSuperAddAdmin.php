@@ -51,7 +51,8 @@ if(isset($_POST["add"])) {
         }
 
         // New filename
-        $newName = "admin_" . time() . "." . $ext;
+        $random = rand(10000, 99999);
+        $newName = "admin_" . $studID . "_" . $random . "." . $ext;
 
         // REAL server directory
         $targetDir = $_SERVER['DOCUMENT_ROOT'] . "/FOODIE/images/adminsImages/";

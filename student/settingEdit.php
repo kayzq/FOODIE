@@ -47,8 +47,10 @@
         exit;
       }
 
-      // New filename
-      $newName = "student_" . time() . "." . $ext;
+      // New filename 
+      $random = rand(10000, 99999);
+      $newName = "student_" . $studID . "_" . $random . "." . $ext;
+
 
       // Correct server path to save the file
       $uploadDir = $_SERVER['DOCUMENT_ROOT'] . "/FOODIE/images/studentImages/";
