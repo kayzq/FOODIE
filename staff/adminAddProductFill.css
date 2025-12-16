@@ -159,6 +159,7 @@ input[type="text"] {
 .product-type-input {
   width: 30%; /* Make the input box smaller */
   margin-right: 15px;
+  border: none;
 }
 
 .product-type-options {
@@ -374,3 +375,4 @@ input[type="text"] {
     padding-bottom: 0;
   }
 }
+

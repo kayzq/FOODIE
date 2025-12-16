@@ -53,7 +53,7 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
           <form id="form" action="add.php" method="POST">
             <div class="form-group">
               <label for="detailID">Detail ID</label>
-             <input type="text" id="prodID" name="prodID" placeholder="eg: PD001" maxlength="5" style="font-size:17px;" readonly value=
+             <input type="text" id="prodID" name="prodID" placeholder="eg: PD001" maxlength="5" style="font-size:17px; border: none;" readonly value=
 					<?php
 						$i = 1;
 						while($i == 1)
@@ -117,7 +117,7 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1)
                   type="text"
                   id="productTypeID"
                   name="productTypeID"
-                  class="product-type-input" value="<?php echo $typeID;?>" readonly style="font-size:17px;" 
+                  class="product-type-input" value="<?php echo $typeID;?>" readonly style="font-size:17px; border: none; " 
                 />
                 <span class="product-type-options">
                   PT001 – Instants | PT002 – Sweets | PT003 – Biscuits

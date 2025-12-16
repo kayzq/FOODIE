@@ -9,7 +9,7 @@ if(!isset($_SESSION['userlogged']) || $_SESSION['userlogged'] != 1) {
 }
 
 // Define the super admin password (you can also store this in the DB instead)
-$superAdminPassword = "SuperAdmin123"; // <-- change this securely
+$superAdminPassword = "123"; // <-- change this securely
 
 // When the form is submitted
 if(isset($_POST['login'])) {
